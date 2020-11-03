@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import UserService from '../services/user.service';
+import UserService from '../../services/user.service';
 
 export default class EditUser extends React.Component {
 
@@ -110,7 +110,7 @@ export default class EditUser extends React.Component {
                     <Link to={"/users"} className="btn btn-primary">Back</Link>
                 </div>
                 <div className="col-md-4">
-                    <h4>Editing User <u style={{ backgroundColor: "#3d70a6", color: "white", borderRadius: "25px", padding: "5px" }}>{`${currentUser.firstname} ${currentUser.lastname}`}</u></h4>
+                    <h4>Editing User <u>{`${currentUser.firstname} ${currentUser.lastname}`}</u></h4>
 
                     <form>
                         <div className="form-group">
@@ -139,7 +139,7 @@ export default class EditUser extends React.Component {
                         {this.state.message.length > 0 ? (
                             <div className="alert alert-warning alert-dismissible fade show" role="alert">
                                 <p>{this.state.message}</p>
-                                <button type="button" className="close" data-dismiss="alert" aria-labels="Close">
+                                <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>

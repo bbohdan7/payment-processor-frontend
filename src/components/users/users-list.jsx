@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-import UserService from '../services/user.service'
-//import 'bootstrap-icons';
+import UserService from '../../services/user.service'
 
 export default class UsersList extends React.Component {
 
@@ -91,11 +90,20 @@ export default class UsersList extends React.Component {
 
                     <ul className="list-group">
                         {users && users.map((user, index) => (
-                            <li className={"list-group-item " + (index === currentIndex ? "active" : "")}
+                            <li style={{ cursor: "pointer" }} className={"list-group-item " + (index === currentIndex ? "active" : "")}
                                 onClick={() => this.setCurrentUser(user, index)}
                                 key={index}>{`${user.firstname} ${user.lastname}`}</li>
                         ))}
                     </ul>
+
+                    <div className="card">
+                        <div className="card-body">
+                            <h4 className="card-title">Create new User</h4>
+                            <div className="card-text">
+                                <Link to={"/add_user"} className="btn btn-outline-info">Create User</Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="col-md-6">
