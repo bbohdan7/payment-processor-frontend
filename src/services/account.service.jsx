@@ -26,6 +26,10 @@ class AccountService {
         return http.get("/accounts/search", { params: { firstname: firstname, lastname: lastname } });
     }
 
+    findByOwner(id) {
+        return http.get(`/accounts/owner/${id}`);
+    }
+
 }
 
 export default new AccountService();
