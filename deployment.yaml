@@ -19,6 +19,6 @@ spec:
       - name: wasapp-frontend
         image: myregistry:31777/wasapp-frontend
         ports:
-        - containerPort: 300
+        - containerPort: 3000
         stdin: true
         tty: true
