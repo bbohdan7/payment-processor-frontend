@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-processor-frontend
+  namespace: bogdan
+  labels:
+    app: payment-processor-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-processor-frontend
+  template:
+    metadata:
+      labels:
+        app: payment-processor-frontend
+    spec:
+      containers:
+      - name: wasapp-frontend
+        image: myregistry:31777/wasapp-frontend
+        ports:
+        - containerPort: 300
+        stdin: true
+        tty: true
