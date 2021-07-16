@@ -20,11 +20,5 @@ spec:
         image: myregistry:31777/wasapp-frontend
         ports:
         - containerPort: 3000
-        startupProbe:
-          httpGet:
-            path: /
-            port: 3000
-          failureThreshold: 30
-          periodSeconds: 10
-#        stdin: true
+        stdin: true
 #        tty: true
