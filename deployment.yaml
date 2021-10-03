@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: wasapp-frontend
-        image: myregistry:31777/wasapp-frontend
+        image: 192.168.0.132/payment-processor-frontend
         ports:
         - containerPort: 3000
         stdin: true
